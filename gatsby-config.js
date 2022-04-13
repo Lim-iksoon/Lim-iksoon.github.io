@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Gwachon Alarm Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `islim`,
+      summary: `who lives and works in gwachon with two lovely kids.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `A blog to share public information in Gwachon.`,
+    siteUrl: `https://lim-iksoon.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `islim`,
     },
   },
   plugins: [
@@ -105,7 +105,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Gwachon Alarm",
           },
         ],
       },
@@ -113,8 +113,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Gwachon Alarm`,
+        short_name: `Gwachon Alarm`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website

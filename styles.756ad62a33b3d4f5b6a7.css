@@ -1,0 +1,1 @@
+.dark-switcher{background:transparent;border:none;color:#fff;cursor:pointer;margin-top:10px}@media (min-width:992px){.dark-switcher{position:absolute;right:15px;top:10px}}.dark{background-color:#2a2b2d;color:#fff}.dark,.light{transition:all .6s ease}.light{background-color:#fefefe}.light,.light a,.light a:visited{color:#2a2b2d}.dark a,.dark a:visited{color:#fff}

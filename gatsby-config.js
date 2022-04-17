@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gwachon Alarm Blog`,
+    title: `투자하는 꿈이`,
     author: {
       name: `islim`,
       summary: `who lives and works in gwachon with two lovely kids.`,
     },
-    description: `A blog to share public information in Gwachon.`,
+    description: `A blog to share investment information.`,
     siteUrl: `https://lim-iksoon.github.io/`,
     social: {
       twitter: `islim`,
@@ -105,7 +105,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gwachon Alarm",
+            title: "financial freedom Dreamer",
           },
         ],
       },
@@ -113,8 +113,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gwachon Alarm`,
-        short_name: `Gwachon Alarm`,
+        name: `financial freedom Dreamer`,
+        short_name: `financial freedom Dreamer`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
@@ -128,5 +128,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    'gatsby-plugin-sitemap',
   ],
 }

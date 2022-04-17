@@ -32,17 +32,17 @@ const Layout = ({ location, title, children }) => {
   return (
     <ThemeContext.Consumer>
       {theme => (
-        <div className={theme.dark ? 'dark' : 'light'}>
-          <Header></Header>
-            <div
-              style={{
-                margin: `0 auto`,
-                maxWidth: 960,
-                padding: `0px 1.0875rem 1.45rem`,
-                paddingTop: 0,
-              }}
-            >
-          <div className="global-wrapper" data-is-root-path={isRootPath}>
+        <div className="global-wrapper" data-is-root-path={isRootPath}>
+          <div className={theme.dark ? 'dark' : 'light'}>
+            <Header></Header>
+              <div
+                style={{
+                  margin: `0 auto`,
+                  maxWidth: 960,
+                  padding: `0px 1.0875rem 1.45rem`,
+                  paddingTop: 0,
+                }}
+              >
             <header className="global-header">{header}</header>
             <Button primary onClick={()=>{navigate("/general")}}>투자 일반</Button>
             <Button primary onClick={()=>{navigate("/investment_diary")}}>투자 일지</Button>
@@ -55,9 +55,6 @@ const Layout = ({ location, title, children }) => {
             <a href="https://www.gatsbyjs.com">Gatsby</a>
             </footer> */}
           </div>
-            <div>
-              <Bio/>
-            </div> 
           </div>
         </div>
         

@@ -41,10 +41,9 @@ const Bio = () => {
         height={50}
         quality={95}
         alt="Profile picture"
-        style={{whiteSpace:"nowrap"}}
       />
       {author?.name && (
-        <p style={{whiteSpace:"nowrap"}}>
+        <p style={{flexDirection:"row"}}>
           Written by <strong>{author.name}</strong> {author?.summary || null}
           {` `}
           {/* <a href={`https://twitter.com/${social?.twitter || ``}`}>

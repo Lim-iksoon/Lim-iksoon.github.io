@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-categories-tsx",
+    "path": "/categories/stock_analysis/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"투자하는 꿈이"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/hello-world/"},"frontmatter":{"title":"This is sample file that how to use markdown file"}}}]}},"pageContext":{"category":"stock_analysis"}},
+    "staticQueryHashes": ["2841359383","3257411868"]}

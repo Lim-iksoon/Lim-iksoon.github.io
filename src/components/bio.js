@@ -44,6 +44,8 @@ const Bio = () => {
       />
       {author?.name && (
         <p style={{flexDirection:"row"}}>
+          시스템 엔지니어, S/W 개발자로 변경하고 있는 중.
+          경제적 자유를 꿈꾸는 경제/재테크 진행중 Since 2020
           Written by <strong>{author.name}</strong> {author?.summary || null}
           {` `}
           {/* <a href={`https://twitter.com/${social?.twitter || ``}`}>

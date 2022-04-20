@@ -1,8 +1,8 @@
 ---
 title: 장단기 국채 금리 차이 역전
-date: "2022-04-17"
+date: "2022-04-18"
 description: 장단기 국채 금리 차이 역전에 대해 다루어 봅니다. 
-section: investment_diary
+categories: investment_diary
 ---
 
 안녕하세요 꿈이입니다. 

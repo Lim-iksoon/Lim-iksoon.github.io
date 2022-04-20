@@ -51,6 +51,8 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6814400196882627"
+      crossorigin="anonymous"></script>
     </Layout>
   )
 }

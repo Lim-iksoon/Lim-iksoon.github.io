@@ -1,8 +1,8 @@
 ---
 title: This is sample file that how to use markdown file
-date: "2022-04-17"
+date: "2022-04-16"
 description: "Hello World"
-section: stock_analysis
+categories: quant_analysis
 ---
 
 This is my first post on my new fake blog! How exciting!

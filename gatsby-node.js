@@ -22,10 +22,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+
+        categoriesGroup: allMarkdownRemark {
+          group(field: frontmatter___categories) {
+            fieldValue
+            totalCount
+          }
+        }
       }
     `
   )
-
+  
   if (result.errors) {
     reporter.panicOnBuild(
       `There was an error loading your blog posts`,
@@ -56,6 +63,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+  const categoriesTemplate = path.resolve("src/templates/categories.tsx");
+  // 카테고리 데이터를 가져온다.
+  const categories = result.data.categoriesGroup.group
+  categories.forEach(category => {
+    createPage({
+      // 생성할 페이지들의 slug는 카테고리 이름을 kebab base로 변환한 것이다.
+      // path: `/categories/${kebabCase(category.fieldValue)}/`,
+      path: `/categories/${category.fieldValue}/`,
+      // 페이지를 생성하기 위해서 사용하는 template component
+      component: categoriesTemplate,
+      // 페이지에 전달하고 싶은 값이 있으면 context에 추가한다. 여기서는 카테고리 이름을 넣었다.
+      context: {
+        category: category.fieldValue,
+      },
+    })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

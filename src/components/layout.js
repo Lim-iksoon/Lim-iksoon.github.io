@@ -7,6 +7,7 @@ import '../styles/layout.css'
 import Button from './buttons'
 import Bio from "./bio"
 
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
@@ -44,10 +45,10 @@ const Layout = ({ location, title, children }) => {
                 }}
               >
             <header className="global-header">{header}</header>
-            <Button primary onClick={()=>{navigate("/general")}}>투자 일반</Button>
-            <Button primary onClick={()=>{navigate("/investment_diary")}}>투자 일지</Button>
-            <Button primary onClick={()=>{navigate("/stock_analysis")}}>종목 분석</Button>
-            <Button primary onClick={()=>{navigate("/quant_analysis")}}>퀀트 분석</Button>
+            <Button primary onClick={()=>{navigate("/categories/general")}}>투자 일반</Button>
+            <Button primary onClick={()=>{navigate("/categories/investment_diary")}}>투자 일지</Button>
+            <Button primary onClick={()=>{navigate("/categories/stock_analysis")}}>종목 분석</Button>
+            <Button primary onClick={()=>{navigate("/categories/quant_analysis")}}>퀀트 분석</Button>
             <main>{children}</main>
             {/* <footer>
             © {new Date().getFullYear()}, Built with
@@ -57,7 +58,6 @@ const Layout = ({ location, title, children }) => {
           </div>
           </div>
         </div>
-        
       )}
     </ThemeContext.Consumer>
   )

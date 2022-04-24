@@ -1,4 +1,279 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[financial freedom Dreamer]]></title><description><![CDATA[A blog to share investment information.]]></description><link>https://lim-iksoon.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Apr 2022 12:34:36 GMT</lastBuildDate><item><title><![CDATA[자본 시장의 기본 원리]]></title><description><![CDATA[…]]></description><link>https://lim-iksoon.github.io/capitalism/</link><guid isPermaLink="false">https://lim-iksoon.github.io/capitalism/</guid><pubDate>Wed, 20 Apr 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 꿈이입니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[financial freedom Dreamer]]></title><description><![CDATA[A blog to share investment information.]]></description><link>https://lim-iksoon.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Apr 2022 11:21:33 GMT</lastBuildDate><item><title><![CDATA[모멘텀 기반의 LAA]]></title><description><![CDATA[안녕하세요 꿈이입니다. 오늘은 LAA 전략을 모멘텀 기반으로 변경하여 백테스팅한 내용을 공유 드립니다. LAA 전략은 퀀트 투자로 유명한 Wouter J. Keller…]]></description><link>https://lim-iksoon.github.io/Momentum_based_LAA/</link><guid isPermaLink="false">https://lim-iksoon.github.io/Momentum_based_LAA/</guid><pubDate>Sun, 24 Apr 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 꿈이입니다.&lt;/p&gt;
+&lt;p&gt;오늘은 LAA 전략을 모멘텀 기반으로 변경하여 백테스팅한 내용을 공유 드립니다.&lt;/p&gt;
+&lt;p&gt;LAA 전략은 퀀트 투자로 유명한 Wouter J. Keller에 의해 고안된 방법입니다.
+자세한 내용은 링크된 논문을 참고 부탁드립니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3498092&quot;&gt;논문 링크&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;LAA 전략은 단순하지만 높은 CAGR, 낮은 MDD를 자랑하는 안정적인 전략이고
+저도 현재 사용중인 전략입니다.&lt;/p&gt;
+&lt;p&gt;하지만 예전부터 마켓 타이밍에 대해서 약간 마음에 걸렸던 점이 있었고,
+22년 1Q부터 시작된 하락장에서도 개선하고 싶은 점이 있어 개선을 진행해 보았습니다.&lt;/p&gt;
+&lt;p&gt;LAA 전략은 4개의 자산을 25% 비중으로 투자합니다.
+QQQ(기술주), IWD(미국 중소형주), IEF(미국 중기채), GLD(금)&lt;/p&gt;
+&lt;p&gt;마켓 타이밍 전략은 아래와 같습니다.
+SPY가 200일선 아래에 있고 and 미국 실업률이 12개월 이동 평균 밑에 있을 경우,
+=&gt; QQQ를 SHY로 교체 한다. SHY는 단기채권인데 현금으로 생각하셔도 됩니다.&lt;/p&gt;
+&lt;p&gt;제가 약간 이질감을 느끼는 부분은
+QQQ를 교체하는 factor로 SPY를 사용했다는 점(상관성은 높겠지만 굳이 다른 자산을 넣은점)
+미국 실업률이 최저점에 다가설 경우 역설적으로 불황이 발생할 수 있다는 점 입니다.&lt;/p&gt;
+&lt;p&gt;따라서 퀀트 투자 factor중 가장 많이 사용되는 모멘텀 factor로 마켓 타이밍을 사용하면
+어떨까? 라는 아이디어로 테스트를 해보았고 아래와 같은 결과를 확인할 수 있었습니다.&lt;/p&gt;
+&lt;p&gt;테스트 기간은 2005년 1월 1일부터 현재까지이고 월말 리밸런싱 기준입니다.&lt;/p&gt;
+&lt;p&gt;벤치 마크 (LAA)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;CAGR&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;MDD&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;LAA&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;9.17%&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;-0.146&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;아래는 모멘텀 기준으로 테스트한 결과입니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;N개월 모멘텀을 사용 각 자산군별 해당 자산군이 이동 평균 보다 높을 경우 매수,
+낮을 경우 현금 보유&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;CAGR&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;MDD&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;12개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;8.19&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;9개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;6.19&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;6개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;7.78&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;3개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;7.12&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;1개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;5.94&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;=&gt; MDD를 기록을 안해놨네요. 결과는 오히려 수익률이 떨어졌습니다.
+우상향 하는 자산 4개로 모멘텀 사용하여, 모멘텀이 안 좋은 구간에
+현금을 보유하였지만 오히려 언더워터 구간에 영향으로 수익이 떨어진것으로 생각됩니다.&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;N개월 모멘텀을 N 개월 이동 평균으로 변경&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;안전 자산(IEF, GLD)이 현금 보유 조건일때, 만약 QQQ가 매수 조건이라면
+해당 금액을 QQQ에 투자&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;CAGR&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;MDD&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;12개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;10.19&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;9개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;10.23&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;6개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;10.47&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;3개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;8.57&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;1개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;8.39&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;=&gt; 기간에 따라 기존 LAA 전략 보다 높은 수익 구간을 보입니다.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;균등 배분 방식&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;N 개월 모멘텀보다 낮은 자산군을 제외하고, 현금을 균등하게 분배해서 자산군 매수
+(1개의 자산군만 매수 조건이라면 1개 자산군에 전액 투자)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;CAGR&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;MDD&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;12개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;10.12&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;9개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;7.95&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;6개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;10.11&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;3개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;11.26&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;1개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;10.20&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;=&gt; 기간에 따라 기존 LAA 전략 보다 높은 수익 구간이지만 9개월 모멘텀의 경우 수익률이 안 좋습니다.&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;균등 배분 방식&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;N 개월 +/- M 개월 모멘텀 사용&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;CAGR&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;MDD&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;12개월 - 1개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;11.58&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;12개월 - 2개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;10.95&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;12개월 + 1개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;9.91&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;12개월 + 2개월&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;8.78&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;=&gt; 기간과 +/-에 따라 기존 LAA 전략 보다 높은 수익 구간이 존재합니다.&lt;/p&gt;
+&lt;p&gt;가장 높은 수익률을 보인 3개월 모멘텀 결과는 CAGR은 2% 정도 개선이 되었지만
+MDD가 6% 정도 더 안좋아졌습니다.&lt;/p&gt;
+&lt;p&gt;다만 CAGR 그래프에서 22년 1Q에서 발생하는 손실은 기존 LAA 전략보다 개선이 된 것을
+확인할 수 있습니다. 22년 1Q에 QQQ 및 IWD의 모멘텀이 안 좋은데도 실업률이 12개월 이동 평균선보다
+낮아서 발생하는 손실은 없는 기존 LAA 전략에는 있지만
+모멘텀 기반의 LAA 전략에는 없는 것을 확인할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;실제 사용을 하기에는 손실이 큰 구간이 있어서 망설여지네요.
+MDD가 크게 나왔을때를 확인해보니, QQQ/IWD에 크게 투자해서 손실을 본 케이스 였습니다.&lt;/p&gt;
+&lt;p&gt;이상 포스팅을 마칩니다.!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/747b458095e7432f8d56040d144a6bb3/7e509/CAGR_Momentum_Based.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 61.39240506329114%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABEElEQVQoz5WQ0W7DIAxF+f+P3NO2LiGBQAK5BttMDdXWak2lHfFgDLbvtaFSvffbtjnnwkGMcVmWGGMIkUXbCQCMiBBRKSXnvB8AyDkDWDZwSk3P6tUAsNYS0d9Hkca1ygnamlHVa3Ta/mSoiBYy7b/0OW7SyZqUMQwDgC7hAeZDn0prwnI9R9zytl5sqs3U5/u8SxLanm5ZIl7X8e1iHaE28yPmqufeubCugd3MzuVpSdaHYZnfJ/vpt136F0NE4zhSKd2OVFbhEmP4tPNlcR4uaUQLPu87aZek0v0Y7RSqcU0uxo8xfM1uCAlSXyysT75lmGVHQW2qlfWJc324/RarKgCqpZQCAhEO6AUAaq3ftqXB7haifncAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;CAGR_Momentum_Based_LAA&quot;
+        title=&quot;CAGR_Momentum_Based_LAA&quot;
+        src=&quot;/static/747b458095e7432f8d56040d144a6bb3/f058b/CAGR_Momentum_Based.png&quot;
+        srcset=&quot;/static/747b458095e7432f8d56040d144a6bb3/c26ae/CAGR_Momentum_Based.png 158w,
+/static/747b458095e7432f8d56040d144a6bb3/6bdcf/CAGR_Momentum_Based.png 315w,
+/static/747b458095e7432f8d56040d144a6bb3/f058b/CAGR_Momentum_Based.png 630w,
+/static/747b458095e7432f8d56040d144a6bb3/7e509/CAGR_Momentum_Based.png 745w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bf3fb5e1e5fb9a11e908ff4dcc126483/7e509/MDD_Momentum_Based.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 62.0253164556962%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABcklEQVQoz52R207bQBCG/f6vxB1CVYFKQFMaQ1DiJA1x4sS767V31junykkopcBNP2lvZubffw4ZAFhrRUTf0aNqSvo5GRLFtk2mDrXtqjql1PsmOdvWrjYhrFa+rNrQ+4DGY48EIUbrunLDETJWhaqC+cJNZrvzL3G73d7l7m40u7j9Pq6fzr6ay+v7Rf9UYtnow8Q8f7vfXI82F5cwX2SDVUoc+1RVyTk3mbbLVV+W7bbuprPKJIXu4cfaRFXoivObfT59Hs+TaxoHGREhojALsxLulxVYryqMSMVUEBkgPD6qKjuHN1cQ+l0rqizDzIgxRlUlURXMR2uz3uugHtIiIszsG1El72m/Y0SWQ1YkY2YiGqqHh+N850wYVjnoTidg7xmAloUyv932i7OICiEUBTorevr76M8QyNQUutf4gdPMRx9hpvUvSf2p4T9i36T8p6T0Gj+K/3I+FCPKGw7iriVn5R3/ij/lo4KXU/0XvwFblLef+B+qSAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;MDD_Momentum_Based_LAA&quot;
+        title=&quot;MDD_Momentum_Based_LAA&quot;
+        src=&quot;/static/bf3fb5e1e5fb9a11e908ff4dcc126483/f058b/MDD_Momentum_Based.png&quot;
+        srcset=&quot;/static/bf3fb5e1e5fb9a11e908ff4dcc126483/c26ae/MDD_Momentum_Based.png 158w,
+/static/bf3fb5e1e5fb9a11e908ff4dcc126483/6bdcf/MDD_Momentum_Based.png 315w,
+/static/bf3fb5e1e5fb9a11e908ff4dcc126483/f058b/MDD_Momentum_Based.png 630w,
+/static/bf3fb5e1e5fb9a11e908ff4dcc126483/7e509/MDD_Momentum_Based.png 745w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[자본 시장의 기본 원리]]></title><description><![CDATA[…]]></description><link>https://lim-iksoon.github.io/capitalism/</link><guid isPermaLink="false">https://lim-iksoon.github.io/capitalism/</guid><pubDate>Wed, 20 Apr 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 꿈이입니다.&lt;/p&gt;
 &lt;p&gt;자본주의 경제에 역사적인 근간, 발전해온 과정등을 이야기 해보면
 하루 종일 진행해도 끝이 없을 겁니다.&lt;/p&gt;
 &lt;p&gt;이번 포스팅에서는 지극히 제 개인적인 생각을 기준으로 자본주의 경제가 돌아가는

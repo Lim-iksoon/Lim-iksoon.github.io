@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-categories-tsx",
     "path": "/categories/quant_analysis/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"투자하는 꿈이"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/how_to_use_md_file/"},"frontmatter":{"title":"This is sample file that how to use markdown file"}}}]}},"pageContext":{"category":"quant_analysis"}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"투자하는 꿈이"}},"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/Momentum_based_LAA/"},"frontmatter":{"title":"모멘텀 기반의 LAA"}}},{"node":{"fields":{"slug":"/how_to_use_md_file/"},"frontmatter":{"title":"This is sample file that how to use markdown file"}}}]}},"pageContext":{"category":"quant_analysis"}},
     "staticQueryHashes": ["2841359383","3257411868"]}

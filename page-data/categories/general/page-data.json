@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-categories-tsx",
     "path": "/categories/general/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"투자하는 꿈이"}},"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/trading_records/"},"frontmatter":{"title":"trading_records"}}},{"node":{"fields":{"slug":"/capitalism/"},"frontmatter":{"title":"자본 시장의 기본 원리"}}}]}},"pageContext":{"category":"general"}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"투자하는 꿈이"}},"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/trading_records_22_05/"},"frontmatter":{"title":"2022 5월 매매 일지"}}},{"node":{"fields":{"slug":"/capitalism/"},"frontmatter":{"title":"자본 시장의 기본 원리"}}}]}},"pageContext":{"category":"general"}},
     "staticQueryHashes": ["2841359383","3257411868"]}

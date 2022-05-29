@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-categories-tsx",
     "path": "/categories/investment_diary/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"투자하는 꿈이"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/yield_curve_inversion/"},"frontmatter":{"title":"장단기 국채 금리 차이 역전"}}}]}},"pageContext":{"category":"investment_diary"}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"투자하는 꿈이"}},"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/Market_in_turmoil/"},"frontmatter":{"title":"공포의 질린 마켓"}}},{"node":{"fields":{"slug":"/yield_curve_inversion/"},"frontmatter":{"title":"장단기 국채 금리 차이 역전"}}}]}},"pageContext":{"category":"investment_diary"}},
     "staticQueryHashes": ["2841359383","3257411868"]}
